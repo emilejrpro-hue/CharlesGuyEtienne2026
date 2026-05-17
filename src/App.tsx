@@ -5,6 +5,7 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { Analytics } from '@vercel/analytics/react';
 import LandingPage from './components/LandingPage';
 import MainSite from './components/MainSite';
 
@@ -35,6 +36,7 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      <Analytics />
     </div>
   );
 }
