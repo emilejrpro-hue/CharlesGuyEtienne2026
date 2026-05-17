@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Hommage à Charles Guy Étienne",
+  "description": "Un site hommage élégant et professionnel célébrant l\u0027impact et l\u0027héritage de l\u0027éducateur Charles Guy Étienne.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
