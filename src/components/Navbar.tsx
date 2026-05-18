@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Home, User, Lightbulb, Image, MessageSquare, Newspaper, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import Logo from './Logo';
 
 interface NavbarProps {
   activeTab: string;
@@ -22,13 +23,8 @@ export default function Navbar({ activeTab, onTabChange }: NavbarProps) {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12">
-        <div className="flex items-center gap-2">
-          <div className="text-xl font-bold tracking-[0.2em] text-gold uppercase underline decoration-gold/30 underline-offset-4">
-            C.G.E
-          </div>
-          <span className="hidden text-xs uppercase tracking-[0.3em] font-medium text-gray-400 md:block ml-4">
-            Charles Guy Étienne
-          </span>
+        <div className="flex items-center">
+          <Logo className="-mt-3 scale-90 md:scale-100 origin-left" />
         </div>
 
         {/* Desktop Nav */}

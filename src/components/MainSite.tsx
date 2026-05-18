@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import Navbar from './Navbar';
+import Logo from './Logo';
 import Home from './sections/Home';
 import Biography from './sections/Biography';
 import Vision from './sections/Vision';
@@ -44,9 +45,9 @@ export default function MainSite() {
       <footer className="border-t border-gray-100 bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-12">
           <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
-            <div className="flex flex-col gap-4">
-              <div className="text-2xl font-bold tracking-widest text-gold uppercase">C.G.E</div>
-              <p className="max-w-xs text-xs tracking-wide text-gray-500 leading-relaxed uppercase">
+            <div className="flex flex-col gap-2">
+              <Logo className="-ml-1" />
+              <p className="max-w-xs text-xs tracking-wide text-gray-500 leading-relaxed uppercase -mt-2">
                 Une vie consacrée à l’éducation, à la discipline et à l’excellence.
               </p>
             </div>

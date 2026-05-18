@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Mrs+Saint+Delafield&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", serif;
+  --font-signature: "Mrs Saint Delafield", cursive;
   
   --color-gold: #C5A059;
   --color-dark: #050505;
+  
+  --background-gold-gradient: linear-gradient(135deg, #C5A059 0%, #F5E0A3 50%, #C5A059 100%);
 }
 
 @layer base {
