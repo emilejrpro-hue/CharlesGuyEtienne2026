@@ -1,81 +1,176 @@
 import { motion } from 'motion/react';
-import { Lightbulb, Cpu, ShieldCheck, TrendingUp } from 'lucide-react';
-
-const pillars = [
-  {
-    title: "Philosophie Éducative",
-    desc: "L'apprentissage centré sur l'élève, où la curiosité est le moteur de la réussite individuelle.",
-    icon: Lightbulb
-  },
-  {
-    title: "Innovation Numérique",
-    desc: "L'utilisation des outils technologiques pour préparer les élèves aux défis du 21e siècle.",
-    icon: Cpu
-  },
-  {
-    title: "Rigueur & Caractère",
-    desc: "Forger des citoyens responsables par la discipline morale et l'intégrité constante.",
-    icon: ShieldCheck
-  },
-  {
-    title: "Esprit d'Entreprise",
-    desc: "Inciter à l'initiative individuelle pour créer de la valeur à impact social durable.",
-    icon: TrendingUp
-  }
-];
+import { Lightbulb, Cpu, ShieldCheck, Users, Target, Rocket, MessageCircle, Sparkles } from 'lucide-react';
+import Logo from '../Logo';
 
 export default function Vision() {
   return (
-    <div className="py-12 space-y-32">
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="text-center"
-      >
-        <span className="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block">Les piliers du futur</span>
-        <h1 className="mb-8 text-5xl font-bold tracking-tight md:text-8xl italic font-display text-gray-900">Vision Stratégique</h1>
-        <p className="mx-auto max-w-2xl text-xl text-gray-400 font-light">
-          Bâtir une nation forte commence par la formation d'esprits libres et compétents capables d'innover sans peur.
-        </p>
-      </motion.section>
+    <div className="py-20 lg:py-32">
+      <div className="mx-auto max-w-6xl px-6 md:px-12">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20 text-center"
+        >
+          <span className="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block">Les Piliers du Futur</span>
+          <h1 className="mb-6 text-5xl md:text-8xl italic font-display text-gray-900">Vision Stratégique</h1>
+          <div className="h-0.5 w-24 bg-gold/30 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
+            Une éducation fondée sur l’excellence, la discipline et l’innovation pour forger les citoyens de demain.
+          </p>
+        </motion.div>
 
-      <section className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-        {pillars.map((pillar, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+        {/* Main Philosophy Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="flex gap-8 p-10 rounded-3xl border border-gray-100 bg-white hover:bg-gray-50 transition-all hover:border-gold/30 hover:shadow-xl"
+            className="space-y-6"
           >
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gold/10 text-gold">
-              <pillar.icon size={32} />
-            </div>
-            <div>
-              <h3 className="mb-4 text-xl font-bold uppercase tracking-tight text-gray-900">{pillar.title}</h3>
-              <p className="text-gray-500 font-light leading-relaxed text-sm">
-                {pillar.desc}
+            <h2 className="text-3xl md:text-4xl font-display italic text-gray-900 leading-tight">
+              Une vision centrée sur le <span className="text-gold underline decoration-gold/20 underline-offset-8">développement humain</span>
+            </h2>
+            <div className="text-gray-600 leading-relaxed space-y-4 text-lg">
+              <p>
+                À la tête du Collège Catts Pressoir, Monsieur Étienne incarne une vision de l’éducation fondée sur l’excellence, la discipline et l’innovation. 
+                Convaincu que l’école ne doit pas seulement transmettre des connaissances, mais aussi former des citoyens capables de réfléchir, de créer et d’agir pour leur pays, 
+                il place le développement intellectuel et humain des élèves au cœur de sa mission.
+              </p>
+              <p className="font-medium text-gray-900 underline decoration-gold/30 underline-offset-4">
+                Pour lui, chaque jeune possède un potentiel unique qu’il faut révéler et encourager.
               </p>
             </div>
           </motion.div>
-        ))}
-      </section>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 bg-gray-900 rounded-[3rem] overflow-hidden text-white h-[600px]">
-        <div className="p-20 flex flex-col justify-center">
-           <h2 className="text-4xl font-display italic mb-8">Transformer l'éducation par l'action concrète</h2>
-           <p className="text-gray-400 font-light mb-12 leading-relaxed">
-             La vision de Charles Guy Étienne ne se limite pas aux murs d'une salle de classe. C'est un écosystème complet qui favorise l'éclosion des talents naturels. En introduisant l'informatique dès ses débuts, il a prouvé que l'innovation n'était pas une option, mais une nécessité pour le développement national.
-           </p>
-           <button className="self-start text-xs font-bold uppercase tracking-widest border-b border-gold text-gold pb-2 transition-all hover:tracking-[0.4em]">
-             En savoir plus sur nos méthodes
-           </button>
+          {/* The "Blue Box" (Cadran Bleu) */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative p-12 bg-[#0A192F] rounded-[3rem] overflow-hidden group shadow-2xl"
+          >
+            <div className="relative z-10">
+              <ShieldCheck className="text-gold mb-6" size={40} />
+              <h3 className="text-white text-2xl font-display italic mb-6">Confiance & Rigueur</h3>
+              <p className="text-blue-100/70 text-sm leading-relaxed mb-8">
+                Son état d’esprit repose sur la rigueur, la persévérance et la confiance dans les capacités de la jeunesse haïtienne. 
+                Malgré les défis auxquels le pays fait face, il croit profondément que les jeunes peuvent devenir des acteurs du changement grâce au savoir, à la créativité et au travail. 
+                Cette conviction l’a poussé à moderniser l’enseignement au sein du collège en favorisant les sciences, la technologie, l’innovation et les activités qui stimulent la réflexion et l’expression personnelle.
+              </p>
+              <div className="flex gap-4">
+                <Target size={18} className="text-gold" />
+                <span className="text-[10px] uppercase tracking-widest font-bold text-white/40">Objectif : Excellence Nationale</span>
+              </div>
+            </div>
+            <div className="absolute inset-0 opacity-20 filter grayscale blend-luminosity hover:scale-110 transition-transform duration-1000">
+               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" alt="Innovation" className="w-full h-full object-cover" />
+            </div>
+          </motion.div>
         </div>
-        <div className="relative overflow-hidden grayscale contrast-125 opacity-50">
-           <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" alt="Technology" className="w-full h-full object-cover" />
-        </div>
-      </section>
+
+        {/* Management & Values Section */}
+        <motion.section 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-32 bg-white border border-gray-100 p-12 md:p-16 rounded-[3rem] shadow-sm relative overflow-hidden"
+        >
+          <div className="max-w-3xl relative z-10">
+            <h3 className="text-2xl font-display italic text-gold mb-8 italic">Management & Valeurs</h3>
+            <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+              <p>
+                Dans sa manière de gérer l’école, il privilégie l’organisation, l’exigence académique et l’encadrement des élèves. 
+                Il instaure un environnement où le respect, la discipline et l’effort sont considérés comme des valeurs essentielles à la réussite.
+              </p>
+              <p>
+                Cependant, au-delà de cette exigence, il accorde aussi une grande importance à l’épanouissement personnel des élèves. 
+                Il cherche à développer chez eux l’autonomie, la confiance en soi, l’esprit critique et le sens des responsabilités.
+              </p>
+            </div>
+          </div>
+          <div className="absolute top-1/2 right-12 -translate-y-1/2 opacity-[0.03] pointer-events-none hidden lg:block">
+            <Users size={300} />
+          </div>
+        </motion.section>
+
+        {/* Empowerment Section */}
+        <section className="bg-gray-50 rounded-[4rem] p-12 md:p-20 relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Rocket className="text-gold" size={20} />
+                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">Rayonnement</span>
+              </div>
+              <h3 className="text-3xl md:text-5xl font-display italic text-gray-900 mb-8">Espaces d’expression et de valorisation</h3>
+              <div className="text-gray-600 leading-relaxed text-lg space-y-6">
+                <p>
+                  L’une des particularités de sa vision éducative est sa volonté de mettre les élèves en avant et de leur offrir des espaces d’expression et de valorisation. 
+                  Il encourage activement leur participation à des débats contradictoires afin de développer leur capacité d’argumentation, leur ouverture d’esprit et leur réflexion personnelle.
+                </p>
+                <p>
+                  Il favorise également leur présence dans des expositions technologiques, scientifiques et artistiques, où ils peuvent présenter leurs projets, leurs talents et leur créativité. 
+                  À travers ces activités, il permet aux élèves de sortir du cadre traditionnel de la salle de classe et de découvrir leurs capacités dans des domaines variés.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 mt-8">
+                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm text-xs font-bold text-gray-700">
+                  <MessageCircle size={14} className="text-gold" /> Débats Citoyens
+                </div>
+                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm text-xs font-bold text-gray-700">
+                  <Sparkles size={14} className="text-gold" /> Expositions Tech
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square md:aspect-video lg:aspect-square overflow-hidden rounded-[3rem] shadow-xl"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1524178232363-1fb28f74b521?auto=format&fit=crop&q=80&w=800" 
+                alt="Students Collaboration" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gold/10 mix-blend-multiply"></div>
+            </motion.div>
+          </div>
+          
+          <div className="absolute -bottom-24 -right-24 opacity-5 pointer-events-none">
+            <Logo className="scale-[3]" />
+          </div>
+        </section>
+
+        {/* Conclusion / Legacy Text */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-32 text-center max-w-3xl mx-auto"
+        >
+          <div className="flex justify-center mb-8">
+             <div className="h-1 w-12 bg-gold rounded-full"></div>
+          </div>
+          <div className="space-y-6 text-2xl text-gray-700 font-display italic leading-relaxed">
+            <p>
+              "Pour monsieur Étienne, l’école doit être un lieu où les jeunes apprennent à penser, à innover et à croire en leurs compétences. 
+              Grâce à son leadership et à sa vision tournée vers l’avenir, il inspire de nombreuses générations d’élèves à viser l’excellence et à comprendre que l’éducation est l’un des plus grands outils pour construire un avenir meilleur pour Haïti."
+            </p>
+          </div>
+          <div className="mt-8">
+            <Logo variant="gold" className="justify-center scale-75" />
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
+

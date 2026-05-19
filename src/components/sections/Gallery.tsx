@@ -35,14 +35,14 @@ export default function Gallery() {
             <img
               src={image.url}
               alt={image.caption}
-              className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
+              className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8">
               <span className="mb-2 text-[10px] uppercase tracking-widest text-gold font-bold">
                 {image.category}
               </span>
-              <p className="text-lg font-bold text-white leading-tight">
+              <p className="text-sm md:text-base font-bold text-white leading-tight">
                 {image.caption}
               </p>
             </div>
