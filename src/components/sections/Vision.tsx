@@ -97,13 +97,14 @@ export default function Vision() {
 
         {/* Empowerment Section */}
         <section className="bg-gray-50 rounded-[4rem] p-12 md:p-20 relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div className="max-w-3xl mx-auto relative z-10">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <h3 className="text-3xl md:text-5xl font-display italic text-gray-900 mb-8 mt-12">Espaces d’expression et de valorisation</h3>
+              <h3 className="text-3xl md:text-5xl font-display italic text-gray-900 mb-8 mt-4">Espaces d’expression et de valorisation</h3>
               <div className="text-gray-600 leading-relaxed text-lg space-y-6">
                 <p>
                   L’une des particularités de sa vision éducative est sa volonté de mettre les élèves en avant et de leur offrir des espaces d’expression et de valorisation. 
@@ -115,25 +116,11 @@ export default function Vision() {
                 </p>
               </div>
               
-              <div className="flex flex-wrap gap-4 mt-8">
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm text-xs font-bold text-gray-700">
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gray-100 shadow-sm text-xs font-bold text-gray-700">
                   <Sparkles size={14} className="text-gold" /> Expositions Tech
                 </div>
               </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative aspect-square md:aspect-video lg:aspect-square overflow-hidden rounded-[3rem] shadow-xl"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1524178232363-1fb28f74b521?auto=format&fit=crop&q=80&w=800" 
-                alt="Students Collaboration" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gold/10 mix-blend-multiply"></div>
             </motion.div>
           </div>
           
