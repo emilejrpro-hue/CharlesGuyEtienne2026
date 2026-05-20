@@ -1,7 +1,35 @@
-import { motion } from 'motion/react';
-import { Quote, Award, BookOpen, Users } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Quote, Award } from 'lucide-react';
+
+import img1 from '../img2 (1).jpg';
+import img2 from '../img2 (2).jpg';
+import img3 from '../img3.jpg';
+import img4 from '../img4.jpg';
+import img5 from '../img5.jpg';
+import img6 from '../img6.jpg';
+import extraImg1 from '../IMG_2391.jpeg';
+import extraImg2 from '../IMG_2392.jpeg';
+import extraImg3 from '../IMG_2393.jpeg';
+import extraImg4 from '../unnamed.png';
+import extraImg5 from '../unnamed1.png';
+import extraImg6 from '../unnamed2.png';
+
+const slideshowImages = [
+  img1, img2, img3, img4, img5, img6,
+  extraImg1, extraImg2, extraImg3, extraImg4, extraImg5, extraImg6
+];
 
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % slideshowImages.length);
+    }, 7500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="space-y-32 py-12">
       {/* Hero Section */}
@@ -21,20 +49,15 @@ export default function Home() {
           <p className="mb-10 text-xl leading-relaxed text-gray-500 font-light max-w-xl">
             Charles Guy Étienne a transformé le paysage éducatif avec une vision audacieuse, alliant discipline, innovation et entrepreneuriat. Son héritage vit à travers des milliers de réussites.
           </p>
-          <div className="flex flex-wrap gap-6">
-            <div className="flex items-center gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-6">
-              <Users className="text-gold" size={24} />
-              <div>
-                <div className="text-2xl font-bold text-gray-900">10k+</div>
-                <div className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Élèves Impactés</div>
-              </div>
+          <div className="flex flex-wrap gap-4 md:gap-8 items-center py-6 px-8 rounded-3xl bg-gray-900 text-white shadow-2xl shadow-gold/10">
+            <div className="flex flex-col">
+              <span className="text-3xl md:text-4xl font-bold text-gold tracking-tight">1.2K+</span>
+              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-medium text-gray-400 mt-1">élèves impactés</span>
             </div>
-            <div className="flex items-center gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-6">
-              <BookOpen className="text-gold" size={24} />
-              <div>
-                <div className="text-2xl font-bold text-gray-900">35+ Ans</div>
-                <div className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">D'Innovation</div>
-              </div>
+            <div className="h-10 w-px bg-white/10 hidden md:block" />
+            <div className="flex flex-col">
+              <span className="text-3xl md:text-4xl font-bold text-gold tracking-tight">50+</span>
+              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-medium text-gray-400 mt-1">Ans d'innovation</span>
             </div>
           </div>
         </motion.div>
@@ -44,14 +67,21 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-gray-100 shadow-2xl"
+          className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-gray-100 shadow-2xl bg-gray-50"
         >
-          <img
-            src="https://images.unsplash.com/photo-1544717297-fa15c390fe67?auto=format&fit=crop&q=80&w=1000"
-            alt="Charles Guy Étienne in action"
-            className="h-full w-full object-cover transition-all duration-1000"
-            referrerPolicy="no-referrer"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentImageIndex}
+              src={slideshowImages[currentImageIndex]}
+              alt="Charles Guy Étienne in action"
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 3, ease: "easeInOut" }}
+              className="absolute inset-0 h-full w-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </AnimatePresence>
           <div className="absolute inset-0 bg-gold/5 pointer-events-none" />
         </motion.div>
       </section>
@@ -64,44 +94,7 @@ export default function Home() {
           <h2 className="mx-auto max-w-4xl text-3xl font-display font-light italic text-gray-800 md:text-6xl md:leading-[1.4]">
             “L'éducation n'est pas seulement la transmission de connaissances, c'est la construction d'un caractère et d'une vision pour l'avenir.”
           </h2>
-          <div className="mt-12 text-[11px] uppercase tracking-[0.4em] text-gold font-bold">
-            Charles Guy Étienne
-          </div>
         </div>
-      </section>
-
-      {/* Key Impact Cards */}
-      <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
-        {[
-          {
-            title: "Discipline & Rigueur",
-            desc: "Une approche structurée qui forge les leaders de demain par l'exigence morale.",
-            icon: "⚖️"
-          },
-          {
-            title: "Innovation Numérique",
-            desc: "Pionnier de l'intégration du numérique dans l'apprentissage dès les années 90.",
-            icon: "🚀"
-          },
-          {
-            title: "Esprit de Création",
-            desc: "Encourager chaque élève à entreprendre et à devenir acteur de sa propre vie.",
-            icon: "💡"
-          }
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="group p-10 rounded-2xl border border-gray-100 bg-white hover:bg-gray-50 transition-all hover:border-gold/30 hover:shadow-xl"
-          >
-            <div className="mb-6 text-4xl">{item.icon}</div>
-            <h3 className="mb-4 text-xl font-bold uppercase tracking-tight text-gray-900">{item.title}</h3>
-            <p className="text-gray-500 leading-relaxed text-sm font-light">{item.desc}</p>
-          </motion.div>
-        ))}
       </section>
     </div>
   );

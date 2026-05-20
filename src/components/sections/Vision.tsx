@@ -103,26 +103,19 @@ export default function Vision() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <Rocket className="text-gold" size={20} />
-                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">Rayonnement</span>
-              </div>
-              <h3 className="text-3xl md:text-5xl font-display italic text-gray-900 mb-8">Espaces d’expression et de valorisation</h3>
+              <h3 className="text-3xl md:text-5xl font-display italic text-gray-900 mb-8 mt-12">Espaces d’expression et de valorisation</h3>
               <div className="text-gray-600 leading-relaxed text-lg space-y-6">
                 <p>
                   L’une des particularités de sa vision éducative est sa volonté de mettre les élèves en avant et de leur offrir des espaces d’expression et de valorisation. 
-                  Il encourage activement leur participation à des débats contradictoires afin de développer leur capacité d’argumentation, leur ouverture d’esprit et leur réflexion personnelle.
+                  Il encourage activement ces élèves à participer à des activités à l'école afin de développer leur capacité d’argumentation, leur ouverture d’esprit et leur réflexion personnelle.
                 </p>
                 <p>
-                  Il favorise également leur présence dans des expositions technologiques, scientifiques et artistiques, où ils peuvent présenter leurs projets, leurs talents et leur créativité. 
+                  Il favorise également leur présence dans des expositions technologiques et scientifiques, où ils peuvent présenter leurs projets, leurs talents et leur créativité. 
                   À travers ces activités, il permet aux élèves de sortir du cadre traditionnel de la salle de classe et de découvrir leurs capacités dans des domaines variés.
                 </p>
               </div>
               
               <div className="flex flex-wrap gap-4 mt-8">
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm text-xs font-bold text-gray-700">
-                  <MessageCircle size={14} className="text-gold" /> Débats Citoyens
-                </div>
                 <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm text-xs font-bold text-gray-700">
                   <Sparkles size={14} className="text-gold" /> Expositions Tech
                 </div>
@@ -164,9 +157,6 @@ export default function Vision() {
               "Pour monsieur Étienne, l’école doit être un lieu où les jeunes apprennent à penser, à innover et à croire en leurs compétences. 
               Grâce à son leadership et à sa vision tournée vers l’avenir, il inspire de nombreuses générations d’élèves à viser l’excellence et à comprendre que l’éducation est l’un des plus grands outils pour construire un avenir meilleur pour Haïti."
             </p>
-          </div>
-          <div className="mt-8">
-            <Logo variant="gold" className="justify-center scale-75" />
           </div>
         </motion.div>
       </div>

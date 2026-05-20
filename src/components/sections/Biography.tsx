@@ -144,17 +144,7 @@ export default function Biography() {
                 </li>
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Institution</span>
-                  <span className="text-gray-800 text-sm font-medium">Direction du Collège Catts Pressoir</span>
-                </li>
-                <li className="flex flex-col gap-1">
-                  <span className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Domaines Clefs</span>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {['Sciences', 'Technologie', 'Innovation', 'Chimie'].map(tag => (
-                      <span key={tag} className="text-[9px] px-2 py-1 bg-gray-50 border border-gray-100 rounded text-gray-500 uppercase font-medium">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <span className="text-gray-800 text-sm font-medium">Collège Catts Pressoir</span>
                 </li>
               </ul>
             </div>
@@ -165,7 +155,7 @@ export default function Biography() {
                 <h4 className="text-[10px] uppercase tracking-widest font-bold text-gray-900">Méthodologie</h4>
               </div>
               <p className="text-xs text-gray-500 font-light leading-relaxed">
-                Reconnu pour avoir transformé la salle de classe en laboratoire vivant, favorisant l'expérimentation avant la théorie.
+                Reconnu pour avoir transformé l'école Catts Pressoir en laboratoire vivant, favorisant l'expérimentation avant la théorie.
               </p>
             </div>
           </aside>

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Home, User, Lightbulb, Image, MessageSquare, Newspaper, Menu, X } from 'lucide-react';
+import { Home, User, Lightbulb, Image, MessageSquare, Newspaper, Menu, X, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import Logo from './Logo';
 
@@ -14,7 +14,6 @@ const navItems = [
   { id: 'vision', label: 'Vision', icon: Lightbulb },
   { id: 'galerie', label: 'Galerie', icon: Image },
   { id: 'temoignages', label: 'Témoignages', icon: MessageSquare },
-  { id: 'actualites', label: 'Actualités', icon: Newspaper },
 ];
 
 export default function Navbar({ activeTab, onTabChange }: NavbarProps) {
@@ -52,11 +51,27 @@ export default function Navbar({ activeTab, onTabChange }: NavbarProps) {
 
         {/* mobile / toggle */}
         <div className="flex items-center gap-4 md:hidden">
+          {!isOpen && (
+            <motion.div 
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-2"
+            >
+              <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Menu</span>
+              <motion.div
+                animate={{ x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              >
+                <ArrowRight size={14} className="text-gold" />
+              </motion.div>
+            </motion.div>
+          )}
           <button
-            className="text-gray-600"
+            className="relative h-10 w-10 flex items-center justify-center rounded-full border border-gray-100 bg-gray-50/50 text-gray-600 transition-colors hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>

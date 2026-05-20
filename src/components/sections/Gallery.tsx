@@ -1,12 +1,29 @@
 import { motion } from 'motion/react';
+import img1 from '../img2 (1).jpg';
+import img2 from '../img2 (2).jpg';
+import img3 from '../img3.jpg';
+import img4 from '../img4.jpg';
+import img5 from '../img5.jpg';
+import img6 from '../img6.jpg';
+import extraImg1 from '../IMG_2391.jpeg';
+import extraImg2 from '../IMG_2392.jpeg';
+import extraImg3 from '../IMG_2393.jpeg';
+import extraImg4 from '../unnamed.png';
+import extraImg5 from '../unnamed1.png';
+import extraImg6 from '../unnamed2.png';
 
 const images = [
-  { url: "https://images.unsplash.com/photo-1523050335392-9bc567597280?auto=format&fit=crop&q=80&w=800", caption: "Cérémonie de remise des diplômes", category: "Événements" },
-  { url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800", caption: "Session de travail avec les professeurs", category: "Professionnel" },
-  { url: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=800", caption: "Ancienne photo de classe - 1995", category: "Archives" },
-  { url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800", caption: "Inauguration du laboratoire informatique", category: "Innovation" },
-  { url: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=800", caption: "Rencontre avec les élèves du primaire", category: "Éducation" },
-  { url: "https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&q=80&w=800", caption: "Forum sur l'entrepreneuriat scolaire", category: "Événements" },
+  { url: img1, caption: "", category: "Éducation", source: "cattspressoir.org" },
+  { url: img2, caption: "", category: "Professionnel", source: "cattspressoir.org" },
+  { url: img3, caption: "Carnaval au Collège", category: "Innovation", source: "cattspressoir.org" },
+  { url: img4, caption: "", category: "Leadership", source: "cattspressoir.org" },
+  { url: img5, caption: "", category: "Pédagogie", source: "cattspressoir.org" },
+  { url: img6, caption: "Visite du Collège Catts Pressoir", category: "Archives", source: "cattspressoir.org" },
+  { url: extraImg1, caption: "Exposcience annuelle du Collège", category: "Vision", source: "Ticket Magazine" },
+  { url: extraImg2, caption: "M. Étienne au laboratoire de chimie", category: "Engagement", source: "cattspressoir.org" },
+  { url: extraImg4, caption: "À l'écoute de ses enfants du primaire", category: "Technologie", source: "cattspressoir.org" },
+  { url: extraImg5, caption: "Leadership exemplaire", category: "Excellence", source: "cattspressoir.org" },
+  { url: extraImg6, caption: "Transmettre le savoir aux générations futures", category: "Transmission", source: "cattspressoir.org" },
 ];
 
 export default function Gallery() {
@@ -34,16 +51,17 @@ export default function Gallery() {
           >
             <img
               src={image.url}
-              alt={image.caption}
+              alt={image.caption || "Galerie Image"}
               className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8">
-              <span className="mb-2 text-[10px] uppercase tracking-widest text-gold font-bold">
-                {image.category}
-              </span>
-              <p className="text-sm md:text-base font-bold text-white leading-tight">
-                {image.caption}
+              {image.caption && (
+                <p className="text-sm md:text-base font-bold text-white leading-tight mb-2">
+                  {image.caption}
+                </p>
+              )}
+              <p className="text-[9px] uppercase tracking-widest text-gold font-bold italic">
+                Source de l'image : {image.source}
               </p>
             </div>
           </motion.div>

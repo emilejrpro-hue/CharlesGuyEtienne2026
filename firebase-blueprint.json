@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "User shared testimonial",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the author"
+        },
+        "text": {
+          "type": "string",
+          "description": "The testimonial content"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["Ancien élève du collège Catts Pressoir", "Membre du staff du collège Catts Pressoir", "Ancien membre du staff du collège Catts Pressoir", "Élève du collège Catts Pressoir", "Autres"],
+          "description": "Role of the author"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the testimonial was created"
+        }
+      },
+      "required": ["name", "text", "createdAt"]
+    }
+  },
+  "firestore": {
+    "testimonials": {
+      "schema": "Testimonial",
+      "description": "Public testimonials"
+    }
+  }
+}

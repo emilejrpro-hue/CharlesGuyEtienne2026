@@ -7,7 +7,6 @@ import Biography from './sections/Biography';
 import Vision from './sections/Vision';
 import Gallery from './sections/Gallery';
 import Testimonials from './sections/Testimonials';
-import News from './sections/News';
 
 export default function MainSite() {
   const [activeTab, setActiveTab] = useState('accueil');
@@ -19,7 +18,6 @@ export default function MainSite() {
       case 'vision': return <Vision />;
       case 'galerie': return <Gallery />;
       case 'temoignages': return <Testimonials />;
-      case 'actualites': return <News />;
       default: return <Home />;
     }
   };
@@ -52,14 +50,8 @@ export default function MainSite() {
               </p>
             </div>
             
-            <div className="flex gap-12 text-[10px] uppercase tracking-[0.2em] font-medium text-gray-400">
-              <a href="#" className="hover:text-gold transition-colors">Confidentialité</a>
-              <a href="#" className="hover:text-gold transition-colors">Légal</a>
-              <a href="#" className="hover:text-gold transition-colors">Contact</a>
-            </div>
-
             <div className="text-[9px] uppercase tracking-widest text-gray-300">
-              © 2026 Fondation Charles Guy Étienne
+              © 2026 Secondaire III Collège Catts Pressoir
             </div>
           </div>
         </div>

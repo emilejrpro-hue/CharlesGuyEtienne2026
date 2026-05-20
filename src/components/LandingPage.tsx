@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { } from 'lucide-react';
+import heroImage from '../CharlesGEtienne.jpg';
 
 interface LandingPageProps {
   onEnter: () => void;
@@ -29,10 +29,9 @@ export default function LandingPage({ onEnter }: LandingPageProps) {
         className="absolute inset-0 z-0 grayscale"
       >
         <img
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=2000"
+          src={heroImage}
           alt="Charles Guy Étienne"
-          className="h-full w-full object-cover brightness-75"
-          referrerPolicy="no-referrer"
+          className="h-full w-full object-cover brightness-110 contrast-125"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/30 via-transparent to-dark/70" />
         {/* Glow effect */}
@@ -117,45 +116,19 @@ export default function LandingPage({ onEnter }: LandingPageProps) {
             Découvrir votre héritage
             <div className="absolute -inset-1 border border-gold/30 group-hover:inset-0 transition-all" />
           </motion.button>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.2 }}
-            className="text-[10px] uppercase tracking-[0.3em] text-white/30"
-          >
-            Entrer sur le site officiel
-          </motion.p>
         </div>
       </div>
 
-      {/* Peek Cards */}
-      <motion.div 
-        initial={{ x: -20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-12 left-12 hidden max-w-[280px] z-20 md:block"
-      >
-        <div className="p-6 bg-white/5 border border-white/10 backdrop-blur-md rounded-sm">
-          <div className="h-[1px] w-8 bg-gold mb-4"></div>
-          <h3 className="text-[10px] uppercase tracking-widest text-gold mb-2">Éducation & Vision</h3>
-          <p className="text-xs text-white/50 leading-relaxed">
-            Pionnier de l'excellence académique et de l'entrepreneuriat éducatif, forgeant les leaders de demain.
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Navigation Marker */}
+      {/* Photo credit */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-12 right-12 z-20"
+        transition={{ delay: 3 }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20"
       >
-        <div className="flex items-center justify-end gap-4 mb-4">
-          <div className="h-12 w-12 rounded-full border border-gold flex items-center justify-center text-gold text-xs font-bold ring-4 ring-gold/10">
-            02
-          </div>
-        </div>
+        <p className="text-[9px] uppercase tracking-[0.2em] text-white/20 font-medium">
+          Source image : <span className="text-white/30">lenouvelliste.com</span>
+        </p>
       </motion.div>
 
       {/* Background texture overlay */}

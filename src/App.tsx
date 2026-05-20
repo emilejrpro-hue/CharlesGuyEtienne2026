@@ -7,12 +7,14 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import LandingPage from './components/LandingPage';
 import MainSite from './components/MainSite';
+import AudioPlayer from './components/AudioPlayer';
 
 export default function App() {
   const [showLanding, setShowLanding] = useState(true);
 
   return (
     <div className="min-h-screen w-full">
+      <AudioPlayer />
       <AnimatePresence mode="wait">
         {showLanding ? (
           <motion.div
